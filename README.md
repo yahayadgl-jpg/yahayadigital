@@ -1,16 +1,16 @@
-## Hi there 👋
+# NEXORA AI
 
-<!--
-**YahayabelloAI/YahayabelloAI** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Motto
+Na samu mafita. Na samu malami.
 
-Here are some ideas to get you started:
+## Mission
+To help people learn, solve problems, and build skills.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Vision
+To help over one billion people by 2050.
+
+## Founder
+Yahaya Bello
+
+## Country
+Nigeria
