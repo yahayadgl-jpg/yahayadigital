@@ -33,13 +33,20 @@ function sendMessage() {
 
     for (let chat of chatHistory) {
         html += `
-        <hr>
-        <p><strong>Kai:</strong> ${chat.user}</p>
-        <p><strong>NEXORA AI:</strong> ${chat.ai}</p>
-        `;
-    }
+        
+       html += `
+<div class="user-message">
+<strong>Kai:</strong><br>
+${chat.user}
+</div>
 
-    document.getElementById("chat").innerHTML = html;
+<div class="ai-message">
+<strong>NEXORA AI:</strong><br>
+${chat.ai}
+</div>
+`; 
+
+ document.getElementById("chat").innerHTML = html;
 
     input.value = "";
     input.focus();
