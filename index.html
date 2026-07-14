@@ -1,63 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NEXORA AI</title>
 
-<style>
-
-body{
-    background:#0B1F3A;
-    color:white;
-    font-family:Arial,sans-serif;
-    text-align:center;
-    padding:40px;
-}
-
-h1{
-    color:#7B2CBF;
-}
-
-input{
-    width:80%;
-    padding:15px;
-    border-radius:10px;
-    border:none;
-    font-size:18px;
-    margin-top:20px;
-}
-
-button{
-    background:#7B2CBF;
-    color:white;
-    border:none;
-    padding:15px 30px;
-    border-radius:10px;
-    font-size:18px;
-    margin-top:20px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#5A189A;
-}
-
-#chat{
-    margin-top:30px;
-    text-align:left;
-    background:#13294B;
-    padding:20px;
-    border-radius:10px;
-}
-
-.user{
-    color:#87CEFA;
-}
-
-.ai{
-    color:#FFD700;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -65,46 +17,31 @@ button:hover{
 
 <h1>NEXORA AI</h1>
 
+<h2>Na samu mafita. Na samu malami.</h2>
+
+<p><strong>Founder:</strong> Yahaya Bello</p>
+
+<p><strong>Country:</strong> Nigeria</p>
+
+<p><strong>Mission:</strong> To help people learn, solve problems, and build skills.</p>
 
 <input
 type="text"
 id="message"
-placeholder="Rubuta sakonka...">
+placeholder="Rubuta saƙonka...">
 
-<br>
+<br><br>
 
 <button onclick="sendMessage()">Send</button>
 
 <div id="chat">
 
-<p><b>NEXORA AI:</b> Assalamu Alaikum. Barka da zuwa.</p>
+<p><b>NEXORA AI:</b> Assalamu Alaikum. Barka da zuwa Day One.</p>
 
 </div>
 
-<script>
-
-function sendMessage(){
-
-let message=document.getElementById("message").value;
-
-document.getElementById("chat").innerHTML+=`
-
-<p class="user"><b>Kai:</b> ${message}</p>
-
-<p class="ai"><b>NEXORA AI:</b>
-Na karɓi saƙonka.
-
-Na samu mafita.
-Na samu malami.
-</p>
-
-`;
-
-document.getElementById("message").value="";
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
