@@ -117,30 +117,29 @@ function clearChat(){
 
     </div>
 
-    `;
-
-}
-}
 window.onload = function () {
 
-    document.getElementById("chat").innerHTML = `
+document.getElementById("chat").innerHTML = `
 
-    <div class="ai-message">
+<div class="ai-message">
 
-    <strong>NEXORA AI</strong><br>
+<h3>${founder.company}</h3>
 
-    Assalamu Alaikum.
+<p>Assalamu Alaikum.</p>
 
-    Barka da zuwa NEXORA AI.
+<p>Barka da zuwa.</p>
 
-    Na samu mafita.
+<p><strong>Founder:</strong> ${founder.name}</p>
 
-    Na samu malami.
+<p><strong>Country:</strong> ${founder.country}</p>
 
-    Rubuta saƙonka domin mu fara tattaunawa.
+<p><strong>${founder.motto}</strong></p>
 
-    </div>
+<p>Rubuta saƙonka domin mu fara tattaunawa.</p>
 
-    `;
+</div>
+
+`;
 
 }
+    
