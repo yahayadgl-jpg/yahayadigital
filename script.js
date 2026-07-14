@@ -1,29 +1,38 @@
 function sendMessage() {
 
-    let message = document.getElementById("message").value.toLowerCase();
+    let input = document.getElementById("message");
+    let message = input.value.trim();
+
+    if (message === "") {
+        return;
+    }
+
     let reply = "";
 
-    if (message.includes("python")) {
+    if (message.toLowerCase().includes("python")) {
         reply = "Python yare ne mai sauƙin koya kuma yana da amfani wajen gina AI.";
     }
-
-    else if (message.includes("ai")) {
-        reply = "AI yana taimakawa mutane su warware matsaloli cikin sauri da hikima.";
+    else if (message.toLowerCase().includes("ai")) {
+        reply = "AI yana taimakawa mutane su warware matsaloli.";
     }
-
-    else if (message.includes("nexora")) {
-        reply = "NEXORA AI an gina ta domin taimaka wa mutane su samu mafita da ilimi.";
+    else if (message.toLowerCase().includes("nexora")) {
+        reply = "NEXORA AI tana da manufar taimaka wa mutane su samu ilimi da mafita.";
     }
-
     else {
-        reply = "Na karɓi saƙonka. Zan ci gaba da koyo domin in fi taimaka maka.";
+        reply = "Na gode da saƙonka. Har yanzu ina koyo, amma zan ci gaba da inganta amsoshina.";
     }
 
-    document.getElementById("chat").innerHTML += `
-        <p><b>Kai:</b> ${message}</p>
+    let chat = document.getElementById("chat");
 
-        <p><b>NEXORA AI:</b> ${reply}</p>
+    chat.innerHTML += `
+        <hr>
+
+        <p><strong>Kai:</strong> ${message}</p>
+
+        <p><strong>NEXORA AI:</strong> ${reply}</p>
     `;
 
-    document.getElementById("message").value = "";
+    input.value = "";
+
+    input.focus();
 }
