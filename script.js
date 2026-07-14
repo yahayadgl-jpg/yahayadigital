@@ -1,3 +1,12 @@
+const knowledge = {
+    "python": "Python yare ne mai sauƙin koya kuma yana da amfani wajen gina AI.",
+    "ai": "AI yana taimakawa mutane su warware matsaloli da kuma koyon sabbin abubuwa.",
+    "github": "GitHub yana adana project kuma yana taimakawa developers su yi aiki tare.",
+    "nexora": "NEXORA AI tana da manufar taimaka wa mutane su samu mafita da ilimi.",
+    "hello": "Hello! Barka da zuwa NEXORA AI.",
+    "assalamu alaikum": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh."
+};
+
 let chatHistory = [];
 
 function sendMessage() {
@@ -5,23 +14,13 @@ function sendMessage() {
     let input = document.getElementById("message");
     let message = input.value.trim();
 
-    if (message === "") {
-        return;
-    }
+    if (message === "") return;
 
-    let reply = "";
+    let key = message.toLowerCase();
+    let reply = knowledge[key];
 
-    if (message.toLowerCase().includes("python")) {
-        reply = "Python yare ne mai sauƙin koya kuma yana da amfani wajen gina AI.";
-    }
-    else if (message.toLowerCase().includes("ai")) {
-        reply = "AI yana taimakawa mutane su warware matsaloli.";
-    }
-    else if (message.toLowerCase().includes("nexora")) {
-        reply = "NEXORA AI tana da manufar taimaka wa mutane su samu mafita da ilimi.";
-    }
-    else {
-        reply = "Na gode da saƙonka. Zan ci gaba da koyo domin in fi taimaka maka.";
+    if (!reply) {
+        reply = "Ban san amsar wannan ba tukuna. Amma zan ci gaba da koyo.";
     }
 
     chatHistory.push({
@@ -32,12 +31,9 @@ function sendMessage() {
     let html = "";
 
     for (let chat of chatHistory) {
-
         html += `
         <hr>
-
         <p><strong>Kai:</strong> ${chat.user}</p>
-
         <p><strong>NEXORA AI:</strong> ${chat.ai}</p>
         `;
     }
@@ -46,5 +42,4 @@ function sendMessage() {
 
     input.value = "";
     input.focus();
-
 }
