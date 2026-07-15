@@ -4,7 +4,9 @@ const inputEl = document.getElementById('userInput');
 const sendBtn = document.getElementById('sendBtn');
 const clearBtn = document.getElementById('clearBtn');
 const feedback = document.getElementById('clearFeedback');
-
+document.getElementById('clr').onclick=()=>{
+  msgs.innerHTML='<div class="m bot"><b>NEXORA AI:</b> Assalamu Alaikum. Barka da zuwa Day One.<br><br>Ni ce NEXORA AI V5 — fasahar AI daga Najeriya. Yaya zan taimaka maka yau?</div>';
+};
 function getResponse(text){
   const low = text.toLowerCase();
   if(/(sannu|lafiya|yaya|ina|barka|nagode|hausa)/.test(low)) return "Lafiya lau! Na ji Hausa sosai — harshe mai dadi. Zan iya taimaka maka rubuta labari, fassara, yin wasiku, ko bada shawara kan kasuwanci a Hausa tsantsa. Me kake son mu tattauna?";
