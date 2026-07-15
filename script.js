@@ -1,47 +1,26 @@
+// Founder Information
 const founder = {
     name: "Yahaya Bello",
     company: "NEXORA AI",
     country: "Nigeria",
     motto: "Na samu mafita. Na samu malami."
 };
+
+// Knowledge Base
 const knowledge = {
     "python": "Python yare ne mai sauƙin koya kuma yana da amfani wajen gina AI.",
     "ai": "AI yana taimakawa mutane su warware matsaloli da kuma koyon sabbin abubuwa.",
     "github": "GitHub yana adana project kuma yana taimakawa developers su yi aiki tare.",
     "nexora": "NEXORA AI tana da manufar taimaka wa mutane su samu mafita da ilimi.",
     "hello": "Hello! Barka da zuwa NEXORA AI.",
-    "assalamu alaikum": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh."
+    "assalamu alaikum": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh.",
+    "english": "Learning English will help you understand science and AI better."
 };
-"english": "Learning English will help you understand science and AI better."
 
-for (let chat of chatHistory) {
+// Chat History
+let chatHistory = [];
 
-html += `
-
-<div class="user-message">
-
-<strong>Kai</strong><br>
-
-${chat.user}
-
-<br><small>${chat.time}</small>
-
-</div>
-
-<div class="ai-message">
-
-<strong>NEXORA AI</strong><br>
-
-${chat.ai}
-
-<br><small>${chat.time}</small>
-
-</div>
-
-`;
-
-}
-
+// Send Message
 function sendMessage() {
 
     let input = document.getElementById("message");
@@ -50,6 +29,7 @@ function sendMessage() {
     if (message === "") return;
 
     let key = message.toLowerCase();
+
     let reply = knowledge[key];
 
     if (!reply) {
@@ -58,158 +38,121 @@ function sendMessage() {
 
     let time = new Date().toLocaleTimeString();
 
-chatHistory.push({
-    user: message,
-    ai: reply,
-    time: time
-});
+    chatHistory.push({
+        user: message,
+        ai: reply,
+        time: time
     });
 
     let html = "";
 
     for (let chat of chatHistory) {
+
         html += `
-        
-       html += `
-<div class="user-message">
-<strong>Kai:</strong><br>
-${chat.user}
-</div>
+        <div class="user-message">
+            <strong>Kai:</strong><br>
+            ${chat.user}
+            <br><small>${chat.time}</small>
+        </div>
 
-<div class="ai-message">
-<strong>NEXORA AI:</strong><br>
-${chat.ai}
-</div>
-`; 
+        <div class="ai-message">
+            <strong>NEXORA AI:</strong><br>
+            ${chat.ai}
+            <br><small>${chat.time}</small>
+        </div>
+        `;
+    }
 
- document.getElementById("chat").innerHTML = html;
+    document.getElementById("chat").innerHTML = html;
 
     input.value = "";
     input.focus();
 }
-document.getElementById("message").addEventListener("keydown", function(event) {
 
-    if (event.key === "Enter") {
+// Enter Key
+document.getElementById("message").addEventListener("keydown", function(event){
+
+    if(event.key === "Enter"){
         sendMessage();
     }
 
 });
 
+// Clear Chat
 function clearChat(){
 
     chatHistory = [];
 
     document.getElementById("chat").innerHTML = `
-
     <div class="ai-message">
-
-    <strong>NEXORA AI</strong><br>
-
-    Assalamu Alaikum.
-
-    Barka da zuwa NEXORA AI.
-
-    Na samu mafita.
-
-    Na samu malami.
-
-    Rubuta saƙonka domin mu fara tattaunawa.
-
+        <strong>NEXORA AI</strong><br>
+        Assalamu Alaikum.<br>
+        Barka da zuwa Day One.
     </div>
-
-window.onload = function () {
-
-document.getElementById("chat").innerHTML = `
-
-<div class="ai-message">
-
-<h3>${founder.company}</h3>
-
-<p>Assalamu Alaikum.</p>
-
-<p>Barka da zuwa.</p>
-
-<p><strong>Founder:</strong> ${founder.name}</p>
-
-<p><strong>Country:</strong> ${founder.country}</p>
-
-<p><strong>${founder.motto}</strong></p>
-
-<p>Rubuta saƙonka domin mu fara tattaunawa.</p>
-
-</div>
-
-   function showHome() {
-
-document.getElementById("content").innerHTML = `
-
-<div class="home">
-
-<h2>🌍 Welcome to NEXORA AI</h2>
-
-<p><strong>Motto:</strong> Na samu mafita. Na samu malami.</p>
-
-<p>
-NEXORA AI an gina ta domin taimaka wa mutane su koyi ilimi,
-su warware matsaloli, kuma su gina ƙwarewa.
-</p>
-
-<h3>Mission</h3>
-
-<p>
-To help people learn, solve problems, and build skills using Artificial Intelligence.
-</p>
-
-<button onclick="showChat()">
-Start Learning
-</button>
-
-</div>
-
-`;
+    `;
 
 }
 
+// Home
+function showHome(){
 
+    document.getElementById("content").innerHTML = `
+    <div class="home">
+        <h2>🌍 Welcome to NEXORA AI</h2>
 
+        <p><strong>Motto:</strong> ${founder.motto}</p>
+
+        <p>
+        NEXORA AI an gina ta domin taimaka wa mutane su koyi ilimi,
+        su warware matsaloli, kuma su gina ƙwarewa.
+        </p>
+
+        <button onclick="showChat()">Start Learning</button>
+    </div>
+    `;
+}
+
+// Chat
 function showChat(){
 
-document.getElementById("content").innerHTML=`
-
-<h2>💬 Chat</h2>
-
-<p>Chat system zai kasance a nan.</p>
-
-`;
-
+    document.getElementById("content").innerHTML = `
+    <h2>💬 Chat</h2>
+    <p>Rubuta saƙonka a akwatin da ke ƙasa.</p>
+    `;
 }
 
+// Learn
 function showLearn(){
 
-document.getElementById("content").innerHTML=`
+    document.getElementById("content").innerHTML = `
+    <h2>📚 Learn</h2>
 
-<h2>📚 Learn</h2>
-
-<p>Anan za mu koyi Python, AI da Programming.</p>
-
-`;
-
+    <p>Python</p>
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>JavaScript</p>
+    <p>Artificial Intelligence</p>
+    `;
 }
 
+// About
 function showAbout(){
 
-document.getElementById("content").innerHTML=`
+    document.getElementById("content").innerHTML = `
+    <h2>ℹ️ About</h2>
 
-<h2>ℹ️ About</h2>
-
-<p>Founder: Yahaya Bello</p>
-
-<p>Company: NEXORA AI</p>
-
-<p>Country: Nigeria</p>
-
-`;
-
+    <p><strong>Founder:</strong> ${founder.name}</p>
+    <p><strong>Company:</strong> ${founder.company}</p>
+    <p><strong>Country:</strong> ${founder.country}</p>
+    <p><strong>Motto:</strong> ${founder.motto}</p>
+    `;
 }
 
-window.onload = showHome; 
+// Start App
+window.onload = function(){
+
+    showHome();
+
+    clearChat();
+
+};
