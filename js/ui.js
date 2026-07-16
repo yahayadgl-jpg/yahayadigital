@@ -1,5 +1,5 @@
 // ===============================
-// UI System
+// NEXORA AI UI System V4
 // ===============================
 
 // Founder Information
@@ -15,18 +15,38 @@ function showHome() {
 
     document.getElementById("content").innerHTML = `
         <div class="home">
-            <h2>🌍 Welcome to ${founder.company}</h2>
 
-            <p><strong>Motto:</strong> ${founder.motto}</p>
+            <h2>🌍 Welcome to NEXORA AI</h2>
+
+            <p><strong>${founder.motto}</strong></p>
 
             <p>
-            NEXORA AI an gina ta domin taimaka wa mutane su koyi ilimi,
-            su warware matsaloli, kuma su gina ƙwarewa.
+            NEXORA AI an gina ta domin taimaka wa mutane
+            su koyi ilimi, su warware matsaloli,
+            kuma su gina ƙwarewa.
             </p>
 
-            <button onclick="showChat()">
+            <button onclick="showLearn()">
                 Start Learning
             </button>
+
+        </div>
+    `;
+}
+
+// Learn
+function showLearn() {
+
+    document.getElementById("content").innerHTML = `
+        <div class="home">
+
+            <h2>📚 Learn</h2>
+
+            <p>🐍 Python</p>
+            <p>🌐 HTML</p>
+            <p>🎨 CSS</p>
+            <p>⚡ JavaScript</p>
+            <p>🤖 Artificial Intelligence</p>
 
         </div>
     `;
@@ -36,24 +56,15 @@ function showHome() {
 function showChat() {
 
     document.getElementById("content").innerHTML = `
-        <h2>💬 Chat</h2>
-        <p>Rubuta saƙonka a akwatin da ke ƙasa.</p>
-    `;
-}
+        <div class="home">
 
-// Learn
-function showLearn() {
+            <h2>💬 Chat</h2>
 
-    document.getElementById("content").innerHTML = `
-        <h2>📚 Learn</h2>
+            <p>
+            Rubuta saƙonka a akwatin da ke ƙasa.
+            </p>
 
-        <ul>
-            <li>Python</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Artificial Intelligence</li>
-        </ul>
+        </div>
     `;
 }
 
@@ -61,12 +72,19 @@ function showLearn() {
 function showAbout() {
 
     document.getElementById("content").innerHTML = `
-        <h2>ℹ️ About</h2>
+        <div class="home">
 
-        <p><strong>Founder:</strong> ${founder.name}</p>
-        <p><strong>Company:</strong> ${founder.company}</p>
-        <p><strong>Country:</strong> ${founder.country}</p>
-        <p><strong>Motto:</strong> ${founder.motto}</p>
+            <h2>ℹ️ About</h2>
+
+            <p><strong>Founder:</strong> ${founder.name}</p>
+
+            <p><strong>Company:</strong> ${founder.company}</p>
+
+            <p><strong>Country:</strong> ${founder.country}</p>
+
+            <p><strong>Motto:</strong> ${founder.motto}</p>
+
+        </div>
     `;
 }
 
