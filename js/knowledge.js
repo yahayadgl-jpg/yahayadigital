@@ -1,31 +1,48 @@
-// Knowledge Base
+// ===============================
+// NEXORA AI Knowledge Base V4
+// ===============================
 
 const knowledge = {
-    "python": "Python yare ne mai sauƙin koya kuma yana da amfani wajen gina AI.",
 
-    "ai": "Artificial Intelligence yana taimakawa wajen warware matsaloli.",
+    greetings: [
+        "hello",
+        "hi",
+        "salam",
+        "assalamualaikum",
+        "assalamu alaikum"
+    ],
 
-    "html": "HTML yana gina tsarin shafin yanar gizo.",
+    python:
+        "Python yare ne mai sauƙin koya kuma yana da amfani wajen gina Artificial Intelligence.",
 
-    "css": "CSS yana ƙawata shafin yanar gizo.",
+    html:
+        "HTML yana gina tsarin shafin yanar gizo.",
 
-    "javascript": "JavaScript yana sa shafin ya zama mai motsi.",
+    css:
+        "CSS yana ƙawata shafin yanar gizo.",
 
-    "github": "GitHub yana taimakawa wajen adana project.",
+    javascript:
+        "JavaScript yana sa shafin ya zama mai motsi.",
 
-    "english": "Learning English will help you understand science and AI.",
+    ai:
+        "Artificial Intelligence fasaha ce da ke ba kwamfuta damar koyon bayanai da warware matsaloli.",
 
-    "nexora": "NEXORA AI an gina ta domin taimaka wa mutane su koyi ilimi.",
+    github:
+        "GitHub yana taimaka wa developers wajen adanawa da kuma haɗa projects.",
 
-    "founder": "Founder na NEXORA AI shine Yahaya Bello.",
+    english:
+        "Learning English will help you understand science and AI better.",
 
-    "mission": "Mission: To help people learn, solve problems and build skills.",
+    nexora:
+        "NEXORA AI an gina ta domin taimaka wa mutane su koyi ilimi, su warware matsaloli, kuma su gina ƙwarewa.",
 
-    "motto": "Na samu mafita. Na samu malami.",
+    founder:
+        "Founder na NEXORA AI shine Yahaya Bello.",
 
-    "assalamualaikum": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh.",
+    mission:
+        "Mission: To help people learn, solve problems and build skills.",
 
-    "assalamu alaikum": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh.",
+    motto:
+        "Na samu mafita. Na samu malami."
 
-    "salam": "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh."
 };
