@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<div class="t<!DOCTYPE html>
 <html lang="ha">
 <head>
 <meta charset="UTF-8">
@@ -48,7 +48,7 @@ main{max-width:900px;margin:0 auto;padding:10px 14px 100px}
 <div class="logo-box">⚡</div>
 <div><div class="logo-title">NEXORA AI</div><div class="logo-sub">V5 • NIGERIA <span class="live">• LIVE</span></div></div>
 </div>
-<div class="tabs">
+abs">
 <button class="tab" data-tab="home" onclick="switchTab('home')">Home</button>
 <button class="tab active" data-tab="chat" onclick="switchTab('chat')">Chat</button>
 <button class="tab" data-tab="learn" onclick="switchTab('learn')">Learn</button>
@@ -80,7 +80,7 @@ main{max-width:900px;margin:0 auto;padding:10px 14px 100px}
 </main>
 
 <script>
-const API_KEY = "AQ.Ab8RN6LWKqGzmvwRSG9aA_xP-RrfCZnkFlBjiHCmBDJrUrHgag"
+const API_KEY = "AQ.Ab8RN6Lpt6BSRD2VqqQcBzcIJ1ttigQMliSt9nY_bUmz0Ci17A";
 // ============================================================
 
 const messagesEl = document.getElementById('msgs');
