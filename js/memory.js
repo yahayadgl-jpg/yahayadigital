@@ -1,21 +1,25 @@
-// Memory System
+// ===============================
+// NEXORA AI Memory System V4
+// ===============================
 
+// Save Chat
 function saveChat() {
 
     localStorage.setItem(
-        "chatHistory",
+        "nexora_chat",
         JSON.stringify(chatHistory)
     );
 
 }
 
+// Load Chat
 function loadChat() {
 
-    const savedChat = localStorage.getItem("chatHistory");
+    const saved = localStorage.getItem("nexora_chat");
 
-    if (savedChat) {
+    if (saved) {
 
-        chatHistory = JSON.parse(savedChat);
+        chatHistory = JSON.parse(saved);
 
         renderChat();
 
@@ -27,17 +31,27 @@ function loadChat() {
 
 }
 
+// Clear Chat
 function clearChat() {
 
     chatHistory = [];
 
-    localStorage.removeItem("chatHistory");
+    localStorage.removeItem("nexora_chat");
 
     document.getElementById("chat").innerHTML = `
         <div class="ai-message">
+
             <strong>NEXORA AI</strong><br>
+
             Assalamu Alaikum.<br>
-            Barka da zuwa Day One.
+
+            Barka da zuwa Day One.<br><br>
+
+            Na samu mafita.<br>
+
+            Na samu malami.
+
         </div>
     `;
+
 }
