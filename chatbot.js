@@ -22,7 +22,14 @@ const database = {
     { tambaya: "Karin magana game da hakuri", amsa: "Hakuri maganin zaman duniya." }
   ]
 };
-
+ilimi: [
+  { tambaya: "2+2", amsa: "2+2 = 4." },
+  { tambaya: "5x3", amsa: "5×3 = 15." },
+  { tambaya: "Wanene shugaban farko na Najeriya?", amsa: "Shugaban farko na Najeriya shi ne Dr. Nnamdi Azikiwe." },
+  { tambaya: "Shekarar samun 'yancin Najeriya", amsa: "Najeriya ta samu 'yancin kai a 1960." },
+  { tambaya: "Menene oxygen?", amsa: "Oxygen isasshen iskar da muke shaƙa, yana da alamar O₂." },
+  { tambaya: "Menene rana?", amsa: "Rana tauraro ce da ke ba mu haske da zafi." }
+]
 // Nemo amsa (fuzzy search)
 function nemoAmsa(tambaya) {
   const input = tambaya.toLowerCase();
@@ -48,11 +55,3 @@ function aikaTambaya() {
   document.getElementById("chatBox").innerHTML += "<p><b>Nexora AI:</b> " + amsa + "</p>";
   document.getElementById("userInput").value = "";
 }
-ilimi: [
-  { tambaya: "2+2", amsa: "2+2 = 4." },
-  { tambaya: "5x3", amsa: "5×3 = 15." },
-  { tambaya: "Wanene shugaban farko na Najeriya?", amsa: "Shugaban farko na Najeriya shi ne Dr. Nnamdi Azikiwe." },
-  { tambaya: "Shekarar samun 'yancin Najeriya", amsa: "Najeriya ta samu 'yancin kai a 1960." },
-  { tambaya: "Menene oxygen?", amsa: "Oxygen isasshen iskar da muke shaƙa, yana da alamar O₂." },
-  { tambaya: "Menene rana?", amsa: "Rana tauraro ce da ke ba mu haske da zafi." }
-]
