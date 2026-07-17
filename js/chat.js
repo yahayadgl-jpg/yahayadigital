@@ -90,7 +90,7 @@ document.getElementById("message").addEventListener("keydown", function(event) {
 function clearChat() {
 
     chatHistory = [];
-
+clearMemory();
     document.getElementById("chat").innerHTML = `
 <div class="ai-message">
 <strong>NEXORA AI</strong><br>
