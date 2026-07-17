@@ -44,9 +44,10 @@ function sendMessage() {
         ai: reply,
 
         time: time
-       saveMemory();
+
     });
-    let html = "";
+    saveMemory();
+    let let = "";
 
     for (const chat of chatHistory) {
 
@@ -60,7 +61,7 @@ ${chat.user}
 <div class="ai-message">
 <strong>NEXORA AI:</strong><br>
 ${chat.ai}
-<br><small>${chat.time}</small>
+<br><ssaveMemory${chat.time}</small>
 </div>
 `;
 
