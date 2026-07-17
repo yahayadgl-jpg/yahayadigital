@@ -38,15 +38,13 @@ function sendMessage() {
     const time = new Date().toLocaleTimeString();
 
     chatHistory.push({
-
         user: message,
-
         ai: reply,
-
         time: time
-
     });
+
     saveMemory();
+
     let html = "";
 
     for (const chat of chatHistory) {
@@ -62,35 +60,42 @@ ${chat.user}
 <strong>NEXORA AI:</strong><br>
 ${chat.ai}
 <br><small>${chat.time}</small>
+</div>
+`;
 
     }
 
     document.getElementById("chat").innerHTML = html;
 
     input.value = "";
-
     input.focus();
 
 }
 
 // Enter key
-document.getElementById("message").addEventListener("keydown", function(event) {
+document.getElementById("message").addEventListener("keydown", function (event) {
 
     if (event.key === "Enter") {
 
         sendMessage();
 
-    strong});
+    }
+
+});
 
 // Clear Chat
 function clearChat() {
 
     chatHistory = [];
-clearMemory();
+
+    clearMemory();
+
     document.getElementById("chat").innerHTML = `
 <div class="ai-message">
 <strong>NEXORA AI</strong><br>
 Assalamu Alaikum.<br>
 Barka da zuwa NEXORA AI Brain Version 4.1.
 </div>
-`};
+`;
+
+}
