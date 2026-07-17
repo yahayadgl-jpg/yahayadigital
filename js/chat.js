@@ -47,7 +47,7 @@ function sendMessage() {
 
     });
     saveMemory();
-    let let = "";
+    let html = "";
 
     for (const chat of chatHistory) {
 
@@ -61,9 +61,7 @@ ${chat.user}
 <div class="ai-message">
 <strong>NEXORA AI:</strong><br>
 ${chat.ai}
-<br><ssaveMemory${chat.time}</small>
-</div>
-`;
+<br><small>${chat.time}</small>
 
     }
 
@@ -82,9 +80,7 @@ document.getElementById("message").addEventListener("keydown", function(event) {
 
         sendMessage();
 
-    }
-
-});
+    strong});
 
 // Clear Chat
 function clearChat() {
@@ -97,17 +93,4 @@ clearMemory();
 Assalamu Alaikum.<br>
 Barka da zuwa NEXORA AI Brain Version 4.1.
 </div>
-`;
-
-}
-window.onload = function () {
-
-    loadMemory();
-
-    if (chatHistory.length === 0) {
-
-        clearChat();
-
-    }
-
-};
+`};
