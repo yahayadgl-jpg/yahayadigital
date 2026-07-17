@@ -1,48 +1,53 @@
-// ===============================
-// NEXORA AI Knowledge Base V4
-// ===============================
+// =====================================
+// NEXORA AI Knowledge Database
+// Version 4.1
+// =====================================
 
-const knowledge = {
+const lessons = [
 
-    greetings: [
-        "hello",
-        "hi",
-        "salam",
-        "assalamualaikum",
-        "assalamu alaikum"
-    ],
+    {
+        id: 1,
+        keyword: "python",
+        title: "Python Basics",
+        level: "Beginner",
+        category: "Programming",
+        reply: "Python yare ne mai sauƙin koya kuma yana da amfani wajen gina AI."
+    },
 
-    python:
-        "Python yare ne mai sauƙin koya kuma yana da amfani wajen gina Artificial Intelligence.",
+    {
+        id: 2,
+        keyword: "html",
+        title: "HTML Basics",
+        level: "Beginner",
+        category: "Web Development",
+        reply: "HTML yana gina tsarin shafin yanar gizo."
+    },
 
-    html:
-        "HTML yana gina tsarin shafin yanar gizo.",
+    {
+        id: 3,
+        keyword: "css",
+        title: "CSS Basics",
+        level: "Beginner",
+        category: "Web Development",
+        reply: "CSS yana ƙawata shafin yanar gizo."
+    },
 
-    css:
-        "CSS yana ƙawata shafin yanar gizo.",
+    {
+        id: 4,
+        keyword: "javascript",
+        title: "JavaScript Basics",
+        level: "Beginner",
+        category: "Programming",
+        reply: "JavaScript yana sa website ya zama mai motsi kuma yana ba shi aiki."
+    },
 
-    javascript:
-        "JavaScript yana sa shafin ya zama mai motsi.",
+    {
+        id: 5,
+        keyword: "ai",
+        title: "Artificial Intelligence",
+        level: "Beginner",
+        category: "Artificial Intelligence",
+        reply: "Artificial Intelligence (AI) yana taimaka wa kwamfuta ta koya, ta yi tunani, kuma ta warware matsaloli."
+    }
 
-    ai:
-        "Artificial Intelligence fasaha ce da ke ba kwamfuta damar koyon bayanai da warware matsaloli.",
-
-    github:
-        "GitHub yana taimaka wa developers wajen adanawa da kuma haɗa projects.",
-
-    english:
-        "Learning English will help you understand science and AI better.",
-
-    nexora:
-        "NEXORA AI an gina ta domin taimaka wa mutane su koyi ilimi, su warware matsaloli, kuma su gina ƙwarewa.",
-
-    founder:
-        "Founder na NEXORA AI shine Yahaya Bello.",
-
-    mission:
-        "Mission: To help people learn, solve problems and build skills.",
-
-    motto:
-        "Na samu mafita. Na samu malami."
-
-};
+];
