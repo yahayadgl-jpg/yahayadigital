@@ -1,9 +1,10 @@
-// ===============================
-// NEXORA AI Memory System V4
-// ===============================
+// =====================================
+// NEXORA AI Memory System
+// Version 4.1
+// =====================================
 
-// Save Chat
-function saveChat() {
+// Save chat to browser
+function saveMemory() {
 
     localStorage.setItem(
         "nexora_chat",
@@ -12,46 +13,43 @@ function saveChat() {
 
 }
 
-// Load Chat
-function loadChat() {
+// Load chat from browser
+function loadMemory() {
 
-    const saved = localStorage.getItem("nexora_chat");
+    const data = localStorage.getItem("nexora_chat");
 
-    if (saved) {
+    if (data) {
 
-        chatHistory = JSON.parse(saved);
+        chatHistory = JSON.parse(data);
 
-        renderChat();
+        let html = "";
 
-    } else {
+        for (const chat of chatHistory) {
 
-        clearChat();
+            html += `
+<div class="user-message">
+<strong>Kai:</strong><br>
+${chat.user}
+<br><small>${chat.time}</small>
+</div>
+
+<div class="ai-message">
+<strong>NEXORA AI:</strong><br>
+${chat.ai}
+<br><small>${chat.time}</small>
+</div>
+`;
+        }
+
+        document.getElementById("chat").innerHTML = html;
 
     }
 
 }
 
-// Clear Chat
-function clearChat() {
-
-    chatHistory = [];
+// Delete saved memory
+function clearMemory() {
 
     localStorage.removeItem("nexora_chat");
-
-    document.getElementById("chat").innerHTML = `
-        <div class="ai-message">
-
-            <strong>NEXORA AI</strong><br>
-
-            Assalamu Alaikum.<br>
-
-            Barka da zuwa Day One.<br><br>
-
-            Na samu mafita.<br>
-
-            Na samu malami.
-
-        </div>
-    `;
 
 }
