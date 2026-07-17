@@ -1,5 +1,5 @@
 // ===============================
-// NEXORA AI Version 4.0
+// NEXORA AI Version 4.1
 // Main Application
 // ===============================
 
@@ -7,7 +7,7 @@ const APP = {
 
     name: "NEXORA AI",
 
-    version: "4.0",
+    version: "4.1",
 
     founder: "Yahaya Bello",
 
@@ -29,10 +29,27 @@ const APP = {
 
         console.log("================================");
 
+        // Load previous chat
+        loadMemory();
+
+        // Idan babu chat, nuna welcome message
+        if (chatHistory.length === 0) {
+
+            clearChat();
+
+        }
+
     }
 
 };
 
-APP.start();
+window.onload = function () {
 
-alert("NEXORA AI Version 4.0 Loaded Successfully");
+    APP.start();
+
+};
+
+// Wannan alert ɗin zai iya zama annoying idan kana testing.
+// Idan kana so, za ka iya cire shi daga baya.
+
+// alert("NEXORA AI Version 4.1 Loaded Successfully");
