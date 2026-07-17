@@ -1,90 +1,30 @@
-// ===============================
-// NEXORA AI Chat System V4
-// ===============================
+// =====================================
+// NEXORA AI Chat System
+// Version 4.1
+// =====================================
 
 let chatHistory = [];
 
-function getReply(message) {
+// Search lesson in database
+function getReply(text) {
 
-    const text = message.toLowerCase();
+    text = text.toLowerCase();
 
-    // Greetings
-    if (
-        knowledge.greetings.includes(text)
-    ) {
-        return "Wa Alaikumus Salam wa Rahmatullahi wa Barakatuh. Barka da zuwa NEXORA AI.";
-    }
+    for (const lesson of lessons) {
 
-    // Python
-    if (text.includes("python")) {
-        return knowledge.python;
-    }
+        if (text.includes(lesson.keyword)) {
 
-    // HTML
-    if (text.includes("html")) {
-        return knowledge.html;
-    }
+            return lesson.reply;
 
-    // CSS
-    if (text.includes("css")) {
-        return knowledge.css;
-    }
+        }
 
-    // JavaScript
-    if (
-        text.includes("javascript") ||
-        text.includes("js")
-    ) {
-        return knowledge.javascript;
-    }
-
-    // AI
-    if (
-        text.includes("artificial intelligence") ||
-        text.includes("ai")
-    ) {
-        return knowledge.ai;
-    }
-
-    // GitHub
-    if (text.includes("github")) {
-        return knowledge.github;
-    }
-
-    // English
-    if (
-        text.includes("english") ||
-        text.includes("turanci")
-    ) {
-        return knowledge.english;
-    }
-
-    // NEXORA
-    if (text.includes("nexora")) {
-        return knowledge.nexora;
-    }
-
-    // Founder
-    if (text.includes("founder")) {
-        return knowledge.founder;
-    }
-
-    // Mission
-    if (text.includes("mission")) {
-        return knowledge.mission;
-    }
-
-    // Motto
-    if (text.includes("motto")) {
-        return knowledge.motto;
     }
 
     return "Ban san amsar wannan ba tukuna. Amma zan ci gaba da koyo.";
-}
-// ===============================
-// Send Message
-// ===============================
 
+}
+
+// Send Message
 function sendMessage() {
 
     const input = document.getElementById("message");
@@ -98,14 +38,36 @@ function sendMessage() {
     const time = new Date().toLocaleTimeString();
 
     chatHistory.push({
+
         user: message,
+
         ai: reply,
+
         time: time
+
     });
 
-    saveChat();
+    let html = "";
 
-    renderChat();
+    for (const chat of chatHistory) {
+
+        html += `
+<div class="user-message">
+<strong>Kai:</strong><br>
+${chat.user}
+<br><small>${chat.time}</small>
+</div>
+
+<div class="ai-message">
+<strong>NEXORA AI:</strong><br>
+${chat.ai}
+<br><small>${chat.time}</small>
+</div>
+`;
+
+    }
+
+    document.getElementById("chat").innerHTML = html;
 
     input.value = "";
 
@@ -113,52 +75,28 @@ function sendMessage() {
 
 }
 
-// ===============================
-// Render Chat
-// ===============================
+// Enter key
+document.getElementById("message").addEventListener("keydown", function(event) {
 
-function renderChat() {
+    if (event.key === "Enter") {
 
-    let html = "";
-
-    for (const chat of chatHistory) {
-
-        html += `
-        <div class="user-message">
-            <strong>Kai:</strong><br>
-            ${chat.user}
-            <br><small>${chat.time}</small>
-        </div>
-
-        <div class="ai-message">
-            <strong>NEXORA AI:</strong><br>
-            ${chat.ai}
-            <br><small>${chat.time}</small>
-        </div>
-        `;
+        sendMessage();
 
     }
 
-    document.getElementById("chat").innerHTML = html;
+});
+
+// Clear Chat
+function clearChat() {
+
+    chatHistory = [];
+
+    document.getElementById("chat").innerHTML = `
+<div class="ai-message">
+<strong>NEXORA AI</strong><br>
+Assalamu Alaikum.<br>
+Barka da zuwa NEXORA AI Brain Version 4.1.
+</div>
+`;
 
 }
-
-// ===============================
-// Enter Key
-// ===============================
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const input = document.getElementById("message");
-
-    input.addEventListener("keydown", function (event) {
-
-        if (event.key === "Enter") {
-
-            sendMessage();
-
-        }
-
-    });
-
-});
