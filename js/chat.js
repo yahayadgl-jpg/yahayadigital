@@ -10,11 +10,17 @@ function getReply(text) {
 
     text = text.toLowerCase();
 
+    // Loop through all lessons
     for (const lesson of lessons) {
 
-        if (text.includes(lesson.keyword)) {
+        // Loop through all keywords in the lesson
+        for (const word of lesson.keywords) {
 
-            return lesson.reply;
+            if (text.includes(word.toLowerCase())) {
+
+                return lesson.reply;
+
+            }
 
         }
 
@@ -23,7 +29,7 @@ function getReply(text) {
     return "Ban san amsar wannan ba tukuna. Amma zan ci gaba da koyo.";
 
 }
-
+    
 // Send Message
 function sendMessage() {
 
