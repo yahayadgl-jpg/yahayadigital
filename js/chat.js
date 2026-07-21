@@ -18,16 +18,16 @@ function getReply(text) {
 
             if (text.includes(word.toLowerCase())) {
 
-                return lesson.reply;
+                return `
+📖 Title: ${lesson.title}
 
-            }
+📂 Category: ${lesson.category}
 
-        }
+📈 Level: ${lesson.level}
 
-    }
-
-    return "Ban san amsar wannan ba tukuna. Amma zan ci gaba da koyo.";
-
+💬 Lesson:
+${lesson.reply}
+`;
 }
     
 // Send Message
